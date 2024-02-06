@@ -15,9 +15,14 @@
   <body>
     <div class="weather-app">
       <header>
-        <form>
-          <input type="search" placeholder="Enter a city..." required />
-          <input type="submit" value="Search" />
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city..."
+            required
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
       <main>
@@ -33,15 +38,23 @@
       </main>
       <footer>
         This project was coded by
-        <a href="https://github.com/baronjada" target="_blank">Jada Baron</a>,
-        is
+        <a
+          href="https://github.com/baronjada"
+          target="_blank"
+          class="footer-links"
+          >Jada Baron</a
+        >, is
         <a
           href="https://github.com/baronjada/my-first-project-weather-app"
           target="_blank"
+          class="footer-links"
           >open-sourced on GitHub</a
         >
         and
-        <a href="https://baronjada-weather-app.netlify.app/" target="_blank"
+        <a
+          href="https://baronjada-weather-app.netlify.app/"
+          target="_blank"
+          class="footer-links"
           >hosted on Netlify</a
         >
       </footer>
