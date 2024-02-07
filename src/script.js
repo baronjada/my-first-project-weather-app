@@ -1,15 +1,18 @@
-function displayTemperature(response) {
+function refreshWeather(response) {
   let temperatureElement = document.querySelector("#weather-app-temperature");
   let temperature = response.data.temperature.current;
-  let weatherAppCity = document.querySelector("#weather-app-city");
-  weatherAppCity.innerHTML = response.data.city;
+  let cityElement = document.querySelector("#weather-app-city");
+  let descriptionElement = document.querySelector("#description");
+
+  cityElement.innerHTML = response.data.city;
+  descriptionElement.innerHTML = response.data.condition.description;
   temperatureElement.innerHTML = Math.round(temperature);
 }
 
 function searchCity(city) {
   let apiKey = "7789b9fafffta3o538f2b30e883d3734";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(refreshWeather);
 }
 
 function searchSubmit(event) {
