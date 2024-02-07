@@ -1,6 +1,8 @@
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#weather-app-temperature");
   let temperature = response.data.temperature.current;
+  let weatherAppCity = document.querySelector("#weather-app-city");
+  weatherAppCity.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
 }
 
@@ -13,8 +15,6 @@ function searchCity(city) {
 function searchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
-  let weatherAppCity = document.querySelector("#weather-app-city");
-  weatherAppCity.innerHTML = searchInput.value;
   searchCity(searchInput.value);
 }
 
